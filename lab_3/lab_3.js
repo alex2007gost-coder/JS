@@ -16,6 +16,8 @@ const getName3 = (name) => {
     return `Имя равно ${name}`;
 };
 
+
+
 // Вызов функций и вывод в консоль
 console.log(getName1("Анна"));
 console.log(getName2("Иван"));

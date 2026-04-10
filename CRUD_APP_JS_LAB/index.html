@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Менеджер задач</h1>
+
+        <!-- Форма добавления/редактирования -->
+        <form id="task-form">
+            <div class="form-group">
+                <input type="text" id="task-title" placeholder="Название задачи" required>
+            </div>
+            <div class="form-group">
+                <textarea id="task-desc" placeholder="Описание задачи" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="task-priority">Приоритет:</label>
+                    <select id="task-priority">
+                        <option value="low">🟢 Низкий</option>
+                        <option value="medium" selected>🟡 Средний</option>
+                        <option value="high">🔴 Высокий</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="task-sort">Сортировка:</label>
+                    <select id="task-sort">
+                        <option value="date-desc">📅 Новые сначала</option>
+                        <option value="date-asc">📅 Старые сначала</option>
+                        <option value="priority">⭐ По приоритету</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" id="submit-btn">➕ Добавить задачу</button>
+            <button type="button" id="cancel-btn" class="cancel-btn" style="display: none;">❌ Отменить</button>
+        </form>
+
+        <!-- Поиск -->
+        <div class="search-container">
+            <input type="search" id="search-input" placeholder="🔍 Поиск задач по названию...">
+        </div>
