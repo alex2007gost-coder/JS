@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="weather-card">
+            <!-- Header -->
+            <div class="header">
+                <h1>🌤 Погодное приложение</h1>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="city-input" placeholder="Введите город (Москва, London...)" autocomplete="off">
+                        <button id="search-btn">🔍 Найти</button>
+                    </div>
+                    <button id="location-btn" class="location-btn">📍 Моё местоположение</button>
+                </div>
+            </div>
+
+            <!-- Temperature Unit Toggle -->
+            <div class="unit-toggle">
+                <span>Единицы измерения:</span>
+                <button id="unit-c" class="unit-btn active">°C</button>
+                <button id="unit-f" class="unit-btn">°F</button>
+            </div>
+
+            <!-- Favorites Section -->
+            <div class="favorites-section">
+                <div class="favorites-header">
+                    <span>⭐ Избранные города</span>
+                    <button id="clear-favorites-btn" class="clear-favs-btn">Очистить</button>
+                </div>
+                <div id="favorites-list" class="favorites-list"></div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="spinner" class="spinner hidden">
+                <div class="spinner-circle"></div>
+                <p>Загрузка данных...</p>
+            </div>
+
+            <!-- Main Weather Info -->
+            <div id="weather-main" class="weather-main hidden">
+                <div class="city-info">
+                    <h2 id="city-name">---</h2>
+                    <p id="weather-date"></p>
+                </div>
+                <div class="weather-temp-section">
+                    <img id="weather-icon" src="" alt="weather icon" class="weather-icon">
+                    <div class="temp-info">
+                        <span id="temp" class="temp-value">---</span>
+                        <span id="temp-unit">°C</span>
+                        <p id="feels-like">Ощущается как: ---</p>
+                    </div>
+                </div>
+                <div id="weather-desc" class="weather-desc">---</div>
+                
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <span class="detail-label">💧 Влажность</span>
+                        <span id="humidity" class="detail-value">---%</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">💨 Ветер</span>
+                        <span id="wind" class="detail-value">--- м/с</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">📊 Давление</span>
+                        <span id="pressure" class="detail-value">--- мм.рт.ст</span>
+                    </div>
+                </div>
+
+                <!-- Add to Favorites Button -->
+                <button id="add-favorite-btn" class="add-favorite-btn">⭐ Добавить в избранное</button>
+            </div>
+
+            <!-- Forecast Section -->
+            <div id="forecast-section" class="forecast-section hidden">
+                <h3>📅 Прогноз на 5 дней</h3>
+                <div id="forecast-list" class="forecast-list"></div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
